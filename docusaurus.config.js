@@ -46,9 +46,9 @@ const config = {
     ({
       image: 'img/gh-og-card.png',
       navbar: {
-        title: 'Docusaurus for GitHub Pages',
+        title: 'Hypocrite',
         logo: {
-          alt: 'Docusaurus Logo',
+          alt: 'Hypocrite Logo',
           src: 'img/AbdrakovSolutions.png',
         },        
         items: [
@@ -71,6 +71,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['csharp', 'java', 'python'],
       },
     }),
 };
