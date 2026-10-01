@@ -1,25 +1,21 @@
 ---
-sidebar_position: 1
-title: Home
-slug: /
+sidebar_position: 0
+id: index
+title: Hypocrite
+keywords:
+  - hypocrite
+  - avalonia
+  - wpf
 ---
 
-# Docusaurus for GitHub Pages
+# Hypocrite
 
-This repository represents establishing familiarity with Docusaurus in an attempt to baseline a simple docs-only GitHub Pages setup.
+**Hypocrite.Services** and **Hypocrite.Fody** provide you very powerful services to make you app more cool :)   
+The libraries are compatible with [Avalonia](https://www.avaloniaui.net/) and [WPF](https://learn.microsoft.com/en-US/dotnet/desktop/wpf/introduction-to-wpf?view=netframeworkdesktop-4.8). Almost everything is common in the libraries but there are still small differences in services. So for framework specific information go to the appropriate tab.  
 
-## Initialization
+Before we get stared you should know that the **Hypocrite.Services** is fully **dependent** on [Prism libraries](https://github.com/PrismLibrary/Prism) and [MVVM](https://learn.microsoft.com/en-us/dotnet/architecture/maui/mvvm) pattern.
 
-This instance of Docusaurus was initialized as follows:
+import {DocsCardList} from '../../src/components/DocsCard';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-```bash
-npx create-docusaurus@latest docusaur-gh classic --typescript
-```
-
-Docusaurus can be started via:
-
-```bash
-npm start
-```
-
-Navigate to [http://localhost:3000/](http://localhost:3000/).
+<DocsCardList list={useCurrentSidebarCategory().items} />

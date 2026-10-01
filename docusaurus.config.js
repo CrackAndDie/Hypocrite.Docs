@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Docusaurus for GitHub Pages',
-  tagline: 'Setup Docusaurus for GitHub Pages',
+  title: 'Hypocrite',
+  tagline: 'Hypocrite',
   favicon: 'img/favicon.ico',
   url: 'https://crackanddie.github.io/',
   baseUrl: '/Hypocrite.Docs',
@@ -49,7 +49,7 @@ const config = {
         title: 'Docusaurus for GitHub Pages',
         logo: {
           alt: 'Docusaurus Logo',
-          src: 'img/logo.svg',
+          src: 'img/AbdrakovSolutions.png',
         },        
         items: [
           {
