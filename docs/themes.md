@@ -62,13 +62,10 @@ public enum ThemeType
 
 For proper work of *ThemeSwitcherService* You should create *ResourceDictionaries* for each theme You have and the *ResourceDictionary* that will hold all the changes of themes. So in my project I've created *DarkTheme.xaml*, *LightTheme.xaml* and *ThemeHolder.xaml*.  
 
-<Tabs
-    defaultValue="wpf"
-    values={[
-        {label: 'WPF', value: 'wpf'},
-        {label: 'Avalonia', value: 'avalonia'},
-    ]}>
-    <TabItem value="wpf">  
+<Tabs>  
+
+    <TabItem value="wpf" label="WPF" default>    
+
        *DarkTheme.xaml*:
         ```xml
         <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -120,9 +117,12 @@ For proper work of *ThemeSwitcherService* You should create *ResourceDictionarie
                 </ResourceDictionary>
             </Application.Resources>
         </mvvm:ApplicationBase>
-        ```
-    </TabItem>
-    <TabItem value="avalonia">
+        ```  
+        
+    </TabItem>  
+
+    <TabItem value="avalonia" label="Avalonia">  
+
         *DarkTheme.xaml*:
         ```xml
         <ResourceDictionary xmlns="https://github.com/avaloniaui"
@@ -172,8 +172,10 @@ For proper work of *ThemeSwitcherService* You should create *ResourceDictionarie
                 </ResourceDictionary>
             </Application.Resources>
         </Application>
-        ```
-    </TabItem>
+        ```  
+
+    </TabItem>  
+
 </Tabs>  
 
 ### Usage in *xaml*
