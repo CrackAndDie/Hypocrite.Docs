@@ -9,10 +9,10 @@ const config = {
   title: 'Docusaurus for GitHub Pages',
   tagline: 'Setup Docusaurus for GitHub Pages',
   favicon: 'img/favicon.ico',
-  url: 'https://jaimestill.github.io',
-  baseUrl: '/docusaur-gh',
-  organizationName: 'JaimeStill',
-  projectName: 'docusaur-gh',
+  url: 'https://crackanddie.github.io/',
+  baseUrl: '/Hypocrite.Docs',
+  organizationName: 'crackanddie',
+  projectName: 'Hypocrite',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
@@ -59,7 +59,7 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://github.com/JaimeStill/docusaur-gh',
+            href: 'https://github.com/CrackAndDie/Hypocrite.Docs',
             label: 'GitHub',
             position: 'right',
           },
