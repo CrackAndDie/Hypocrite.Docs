@@ -11,14 +11,12 @@ Before gettings started with the features of the **Hypocrite.Services** you shou
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-    defaultValue="wpf"
-    values={[
-        {label: 'WPF', value: 'wpf'},
-        {label: 'Avalonia', value: 'avalonia'},
-    ]}>
-    <TabItem value="wpf">
-        The first step is to add *PackageReference* to your project:
+<Tabs>  
+
+    <TabItem value="wpf" label="WPF" default>  
+
+        The first step is to add *PackageReference* to your project:  
+
         ```xml
         <ItemGroup>
             ...
@@ -60,9 +58,12 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```  
-        You also should register the window that would be the main window of the app and the window has to implement ```IBaseWindow``` interface.
-    </TabItem>
-    <TabItem value="avalonia">
+        You also should register the window that would be the main window of the app and the window has to implement ```IBaseWindow``` interface.  
+
+    </TabItem>  
+
+    <TabItem value="avalonia" label="Avalonia">  
+
         The first step is to add *PackageReference* to your project:
         ```xml
         <ItemGroup>
@@ -96,6 +97,8 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```  
-        You also should register the window that would be the main window of the app and the window has to implement ```IBaseWindow``` interface.
-    </TabItem>
+        You also should register the window that would be the main window of the app and the window has to implement ```IBaseWindow``` interface.  
+
+    </TabItem>  
+    
 </Tabs>
