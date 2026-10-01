@@ -30,7 +30,7 @@ public partial class App : ApplicationBase
         base.OnStartup(e);
     }
 }
-    ```  
+```  
 
 </TabItem>  
 
@@ -64,21 +64,9 @@ And all available languages for you project as the second parameter.
 Languages using ```LocalizationManager.InitializeExternal``` method could only be initialized once.
 :::
 
-### Ceating *.resx* tables
+### Creating *.resx* tables
 
 In the ```Localization``` folder you should create Resource files with translations and call it as follows - "FileName"."Language".resx (*Gui.resx* or *Gui.ru.resx*). Default resource file doesn't need to have the "Language" part.  
-
-(Example *.resx* files content:)  
-  
-*Gui.ru.resx* file:
-  <div style={{textAlign: 'left'}}>
-    <img src="/docshome/img/hypocrite/localization/exmp1.png" />
-  </div>
-
-*Gui.resx* file:
-  <div style={{textAlign: 'left'}}>
-    <img src="/docshome/img/hypocrite/localization/exmp2.png" />
-  </div>  
   
 ### Usage in *xaml*
 
