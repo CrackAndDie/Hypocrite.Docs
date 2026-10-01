@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>  
 
-    <TabItem value="wpf" label="WPF" default>  
+<TabItem value="wpf" label="WPF" default>  
 
         The first step is to add *PackageReference* to your project:  
 
@@ -60,9 +60,9 @@ import TabItem from '@theme/TabItem';
         ```  
         You also should register the window that would be the main window of the app and the window has to implement ```IBaseWindow``` interface.  
 
-    </TabItem>  
+</TabItem>  
 
-    <TabItem value="avalonia" label="Avalonia">  
+<TabItem value="avalonia" label="Avalonia">  
 
         The first step is to add *PackageReference* to your project:
         ```xml
@@ -99,6 +99,6 @@ import TabItem from '@theme/TabItem';
         ```  
         You also should register the window that would be the main window of the app and the window has to implement ```IBaseWindow``` interface.  
 
-    </TabItem>  
-    
+</TabItem>  
+
 </Tabs>

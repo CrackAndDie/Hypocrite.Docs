@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>  
 
-    <TabItem value="wpf" label="WPF" default>    
+<TabItem value="wpf" label="WPF" default>    
 
         ```csharp
         public partial class App : ApplicationBase
@@ -31,10 +31,10 @@ import TabItem from '@theme/TabItem';
             }
         }
         ```  
-        
-    </TabItem>  
 
-    <TabItem value="avalonia" label="Avalonia">  
+</TabItem>  
+
+<TabItem value="avalonia" label="Avalonia">  
 
         ```csharp
         public partial class App : ApplicationBase
@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
         }
         ```  
 
-    </TabItem>  
+</TabItem>  
 
 </Tabs>   
 

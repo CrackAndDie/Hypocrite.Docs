@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>  
 
-    <TabItem value="wpf" label="WPF" default>    
+<TabItem value="wpf" label="WPF" default>    
 
         ```csharp
         containerRegistry.RegisterInstance(new ThemeSwitcherService<ThemeType>()
@@ -27,9 +27,9 @@ import TabItem from '@theme/TabItem';
         });
         ```  
 
-    </TabItem>  
+</TabItem>  
 
-    <TabItem value="avalonia" label="Avalonia">  
+<TabItem value="avalonia" label="Avalonia">  
 
         ```csharp
         containerRegistry.RegisterInstance(new ThemeSwitcherService<ThemeType>(ThemeType.Dark)
@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
         });
         ```  
 
-    </TabItem>  
+</TabItem>  
 
 </Tabs>   
 
@@ -64,7 +64,7 @@ For proper work of *ThemeSwitcherService* You should create *ResourceDictionarie
 
 <Tabs>  
 
-    <TabItem value="wpf" label="WPF" default>    
+<TabItem value="wpf" label="WPF" default>    
 
        *DarkTheme.xaml*:
         ```xml
@@ -119,9 +119,9 @@ For proper work of *ThemeSwitcherService* You should create *ResourceDictionarie
         </mvvm:ApplicationBase>
         ```  
         
-    </TabItem>  
+</TabItem>  
 
-    <TabItem value="avalonia" label="Avalonia">  
+<TabItem value="avalonia" label="Avalonia">  
 
         *DarkTheme.xaml*:
         ```xml
@@ -174,7 +174,7 @@ For proper work of *ThemeSwitcherService* You should create *ResourceDictionarie
         </Application>
         ```  
 
-    </TabItem>  
+</TabItem>  
 
 </Tabs>  
 
