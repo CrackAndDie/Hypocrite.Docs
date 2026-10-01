@@ -11,13 +11,10 @@ title: Theme management
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-    defaultValue="wpf"
-    values={[
-        {label: 'WPF', value: 'wpf'},
-        {label: 'Avalonia', value: 'avalonia'},
-    ]}>
-    <TabItem value="wpf">  
+<Tabs>  
+
+    <TabItem value="wpf" label="WPF" default>    
+
         ```csharp
         containerRegistry.RegisterInstance(new ThemeSwitcherService<ThemeType>()
         {
@@ -28,9 +25,12 @@ import TabItem from '@theme/TabItem';
                 { ThemeType.Light, "/Hypocrite.DemoWpf;component/Resources/Themes/LightTheme.xaml" },
             },
         });
-        ```
-    </TabItem>
-    <TabItem value="avalonia">
+        ```  
+
+    </TabItem>  
+
+    <TabItem value="avalonia" label="Avalonia">  
+
         ```csharp
         containerRegistry.RegisterInstance(new ThemeSwitcherService<ThemeType>(ThemeType.Dark)
         {
@@ -41,8 +41,10 @@ import TabItem from '@theme/TabItem';
                 { ThemeType.Light, "avares://Hypocrite.DemoAvalonia/Resources/Themes/LightTheme.axaml" },
             },
         });
-        ```
-    </TabItem>
+        ```  
+
+    </TabItem>  
+
 </Tabs>   
 
 The ```ThemeSwitcherService``` get the startup/default theme of your project. About the other parameters we will talk a bit later.  

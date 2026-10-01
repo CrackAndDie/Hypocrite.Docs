@@ -11,13 +11,10 @@ title: Localization
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs
-    defaultValue="wpf"
-    values={[
-        {label: 'WPF', value: 'wpf'},
-        {label: 'Avalonia', value: 'avalonia'},
-    ]}>
-    <TabItem value="wpf">  
+<Tabs>  
+
+    <TabItem value="wpf" label="WPF" default>    
+
         ```csharp
         public partial class App : ApplicationBase
         {
@@ -33,9 +30,12 @@ import TabItem from '@theme/TabItem';
                 base.OnStartup(e);
             }
         }
-        ```
-    </TabItem>
-    <TabItem value="avalonia">
+        ```  
+        
+    </TabItem>  
+
+    <TabItem value="avalonia" label="Avalonia">  
+
         ```csharp
         public partial class App : ApplicationBase
         {
@@ -51,8 +51,10 @@ import TabItem from '@theme/TabItem';
                 base.OnStartup(e);
             }
         }
-        ```
-    </TabItem>
+        ```  
+
+    </TabItem>  
+
 </Tabs>   
 
 The ```LocalizationManager.InitializeExternal``` method gets an assembly where to search for *.resx* files as the first parameter. 
