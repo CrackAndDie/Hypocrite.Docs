@@ -15,33 +15,33 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="wpf" label="WPF" default>    
 
-    ```csharp
-    containerRegistry.RegisterInstance(new ThemeSwitcherService<ThemeType>()
+```csharp
+containerRegistry.RegisterInstance(new ThemeSwitcherService<ThemeType>()
+{
+    NameOfDictionary = "ThemeHolder",
+    ThemeSources = new Dictionary<ThemeType, string>()
     {
-        NameOfDictionary = "ThemeHolder",
-        ThemeSources = new Dictionary<ThemeType, string>()
-        {
-            { ThemeType.Dark, "/Hypocrite.DemoWpf;component/Resources/Themes/DarkTheme.xaml" },
-            { ThemeType.Light, "/Hypocrite.DemoWpf;component/Resources/Themes/LightTheme.xaml" },
-        },
-    });
-    ```  
+        { ThemeType.Dark, "/Hypocrite.DemoWpf;component/Resources/Themes/DarkTheme.xaml" },
+        { ThemeType.Light, "/Hypocrite.DemoWpf;component/Resources/Themes/LightTheme.xaml" },
+    },
+});
+```  
 
 </TabItem>  
 
 <TabItem value="avalonia" label="Avalonia">  
 
-    ```csharp
-    containerRegistry.RegisterInstance(new ThemeSwitcherService<ThemeType>(ThemeType.Dark)
+```csharp
+containerRegistry.RegisterInstance(new ThemeSwitcherService<ThemeType>(ThemeType.Dark)
+{
+    NameOfDictionary = "ThemeHolder",
+    ThemeSources = new Dictionary<ThemeType, string>()
     {
-        NameOfDictionary = "ThemeHolder",
-        ThemeSources = new Dictionary<ThemeType, string>()
-        {
-            { ThemeType.Dark, "avares://Hypocrite.DemoAvalonia/Resources/Themes/DarkTheme.axaml" },
-            { ThemeType.Light, "avares://Hypocrite.DemoAvalonia/Resources/Themes/LightTheme.axaml" },
-        },
-    });
-    ```  
+        { ThemeType.Dark, "avares://Hypocrite.DemoAvalonia/Resources/Themes/DarkTheme.axaml" },
+        { ThemeType.Light, "avares://Hypocrite.DemoAvalonia/Resources/Themes/LightTheme.axaml" },
+    },
+});
+```  
 
 </TabItem>  
 
@@ -66,113 +66,113 @@ For proper work of *ThemeSwitcherService* You should create *ResourceDictionarie
 
 <TabItem value="wpf" label="WPF" default>    
 
-    *DarkTheme.xaml*:
-    ```xml
-    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <Color x:Key="TextForegroundBrushColor">AliceBlue</Color>
-        <SolidColorBrush x:Key="TextForegroundBrush" 
-                        Color="{DynamicResource TextForegroundBrushColor}"/>
+*DarkTheme.xaml*:
+```xml
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="TextForegroundBrushColor">AliceBlue</Color>
+    <SolidColorBrush x:Key="TextForegroundBrush" 
+                    Color="{DynamicResource TextForegroundBrushColor}"/>
 
-        <Color x:Key="WindowBrushColor">#070c13</Color>
-        <SolidColorBrush x:Key="WindowBrush"
-                        Color="{DynamicResource WindowBrushColor}" />
-    </ResourceDictionary>
-    ```
-    *LightTheme.xaml*:
-    ```xml
-    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <Color x:Key="TextForegroundBrushColor">Black</Color>
-        <SolidColorBrush x:Key="TextForegroundBrush"
-                        Color="{DynamicResource TextForegroundBrushColor}" />
-        
-        <Color x:Key="WindowBrushColor">#fefefe</Color>
-        <SolidColorBrush x:Key="WindowBrush"
-                        Color="{DynamicResource WindowBrushColor}" />
-    </ResourceDictionary>
-    ```
-    *ThemeHolder.xaml* (You should set here a default theme):
-    ```xml
-    <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="/Hypocrite.DemoWpf;component/Resources/Themes/DarkTheme.xaml"/>
-        </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-    ```
+    <Color x:Key="WindowBrushColor">#070c13</Color>
+    <SolidColorBrush x:Key="WindowBrush"
+                    Color="{DynamicResource WindowBrushColor}" />
+</ResourceDictionary>
+```
+*LightTheme.xaml*:
+```xml
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="TextForegroundBrushColor">Black</Color>
+    <SolidColorBrush x:Key="TextForegroundBrush"
+                    Color="{DynamicResource TextForegroundBrushColor}" />
+    
+    <Color x:Key="WindowBrushColor">#fefefe</Color>
+    <SolidColorBrush x:Key="WindowBrush"
+                    Color="{DynamicResource WindowBrushColor}" />
+</ResourceDictionary>
+```
+*ThemeHolder.xaml* (You should set here a default theme):
+```xml
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Hypocrite.DemoWpf;component/Resources/Themes/DarkTheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
+```
 
-    The holder of *.xaml* theme files (*ThemeHolder.xaml* in our example) should be merged into Your app resources like this:
-    ```xml
-    <mvvm:ApplicationBase x:Class="YourNamespace.App"
-                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                        xmlns:local="clr-namespace:YourNamespace"
-                        xmlns:mvvm="clr-namespace:Hypocrite.Mvvm;assembly=Hypocrite.Wpf">
-        <Application.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary Source="/Hypocrite.DemoWpf;component/Resources/Themes/ThemeHolder.xaml"/>
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
-        </Application.Resources>
-    </mvvm:ApplicationBase>
-    ```  
+The holder of *.xaml* theme files (*ThemeHolder.xaml* in our example) should be merged into Your app resources like this:
+```xml
+<mvvm:ApplicationBase x:Class="YourNamespace.App"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:YourNamespace"
+                    xmlns:mvvm="clr-namespace:Hypocrite.Mvvm;assembly=Hypocrite.Wpf">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Hypocrite.DemoWpf;component/Resources/Themes/ThemeHolder.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</mvvm:ApplicationBase>
+```  
         
 </TabItem>  
 
 <TabItem value="avalonia" label="Avalonia">  
 
-    *DarkTheme.xaml*:
-    ```xml
-    <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <Color x:Key="TextForegroundBrushColor">AliceBlue</Color>
-        <SolidColorBrush x:Key="TextForegroundBrush" 
-                        Color="{DynamicResource TextForegroundBrushColor}"/>
+*DarkTheme.xaml*:
+```xml
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="TextForegroundBrushColor">AliceBlue</Color>
+    <SolidColorBrush x:Key="TextForegroundBrush" 
+                    Color="{DynamicResource TextForegroundBrushColor}"/>
 
-        <Color x:Key="WindowBrushColor">#070c13</Color>
-        <SolidColorBrush x:Key="WindowBrush"
-                        Color="{DynamicResource WindowBrushColor}" />
-    </ResourceDictionary>
-    ```
-    *LightTheme.xaml*:
-    ```xml
-    <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <Color x:Key="TextForegroundBrushColor">Black</Color>
-        <SolidColorBrush x:Key="TextForegroundBrush"
-                        Color="{DynamicResource TextForegroundBrushColor}" />
-        
-        <Color x:Key="WindowBrushColor">#fefefe</Color>
-        <SolidColorBrush x:Key="WindowBrush"
-                        Color="{DynamicResource WindowBrushColor}" />
-    </ResourceDictionary>
-    ```
-    *ThemeHolder.xaml* (You should set here a default theme):
-    ```xml
-    <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="/Resources/Themes/DarkTheme.axaml"/>
-        </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-    ```
+    <Color x:Key="WindowBrushColor">#070c13</Color>
+    <SolidColorBrush x:Key="WindowBrush"
+                    Color="{DynamicResource WindowBrushColor}" />
+</ResourceDictionary>
+```
+*LightTheme.xaml*:
+```xml
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Color x:Key="TextForegroundBrushColor">Black</Color>
+    <SolidColorBrush x:Key="TextForegroundBrush"
+                    Color="{DynamicResource TextForegroundBrushColor}" />
+    
+    <Color x:Key="WindowBrushColor">#fefefe</Color>
+    <SolidColorBrush x:Key="WindowBrush"
+                    Color="{DynamicResource WindowBrushColor}" />
+</ResourceDictionary>
+```
+*ThemeHolder.xaml* (You should set here a default theme):
+```xml
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+            <ResourceInclude Source="/Resources/Themes/DarkTheme.axaml"/>
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
+```
 
-    The holder of *.xaml* theme files (*ThemeHolder.xaml* in our example) should be merged into Your app resources like this:
-    ```xml
-    <Application xmlns="https://github.com/avaloniaui"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                x:Class="YourNamespace.App">
-        <Application.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ResourceInclude Source="/Resources/Themes/ThemeHolder.axaml"/>
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
-        </Application.Resources>
-    </Application>
-    ```  
+The holder of *.xaml* theme files (*ThemeHolder.xaml* in our example) should be merged into Your app resources like this:
+```xml
+<Application xmlns="https://github.com/avaloniaui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            x:Class="YourNamespace.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Resources/Themes/ThemeHolder.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+```  
 
 </TabItem>  
 

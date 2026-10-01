@@ -15,43 +15,43 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="wpf" label="WPF" default>    
 
-    ```csharp
-    public partial class App : ApplicationBase
+```csharp
+public partial class App : ApplicationBase
+{
+    protected override void OnStartup(StartupEventArgs e)
     {
-        protected override void OnStartup(StartupEventArgs e)
+        // initialization of LocalizationManager static service
+        LocalizationManager.InitializeExternal(Assembly.GetExecutingAssembly(), new ObservableCollection<Language>()
         {
-            // initialization of LocalizationManager static service
-            LocalizationManager.InitializeExternal(Assembly.GetExecutingAssembly(), new ObservableCollection<Language>()
-            {
-                new Language() { Name = "EN" },
-                new Language() { Name = "RU" },
-            });  
-            // ...
-            base.OnStartup(e);
-        }
+            new Language() { Name = "EN" },
+            new Language() { Name = "RU" },
+        });  
+        // ...
+        base.OnStartup(e);
     }
+}
     ```  
 
 </TabItem>  
 
 <TabItem value="avalonia" label="Avalonia">  
 
-    ```csharp
-    public partial class App : ApplicationBase
+```csharp
+public partial class App : ApplicationBase
+{
+    public override void Initialize()
     {
-        public override void Initialize()
+        // initialization of LocalizationManager static service
+        LocalizationManager.InitializeExternal(Assembly.GetExecutingAssembly(), new ObservableCollection<Language>()
         {
-            // initialization of LocalizationManager static service
-            LocalizationManager.InitializeExternal(Assembly.GetExecutingAssembly(), new ObservableCollection<Language>()
-            {
-                new Language() { Name = "EN" },
-                new Language() { Name = "RU" },
-            });  
-            // ...
-            base.OnStartup(e);
-        }
+            new Language() { Name = "EN" },
+            new Language() { Name = "RU" },
+        });  
+        // ...
+        base.OnStartup(e);
     }
-    ```  
+}
+```  
 
 </TabItem>  
 
